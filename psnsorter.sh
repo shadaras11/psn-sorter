@@ -3,12 +3,7 @@ echo "Welcome To Don Juji PSN Log Sorter"
 echo "Welcome To Don Juji PSN Log Sorter"
 
 mkdir parse
-awk '/================TRANSACTIONS END============/{n++}{print >"parse/chopped" n ".txt" }' accounts.txt
-echo "echo \"---------------------------------------------\" >> sortedgames.txt" >> runner.sh
-echo "echo \"---Ghost of Tsushima---\" >> sortedgames.txt" >> runner.sh
-grep -r -E "Ghost of Tsushima" parse | sed -E "s/(.*.txt):.*/\1/" | sort -Ru  >> ghosttemp.txt 
-sed -E "s/(.*)/grep -riah -E ".*@.*:.*" \1 \>\> sortedgames.txt/" ghosttemp.txt >> runner.sh
-echo "wc -l ghosttemp.txt |sed -E \"s/^([0-9]{1,4}) .*/\1/\" | sed -E \"s/(.*)/Total Accounts: \1/\" >> sortedgames.txt" >> runner.sh
+awk '/================
 echo "echo \"---------------------------------------------\" >> sortedgames.txt" >> runner.sh
 echo "echo \"---FIFA 20---\" >> sortedgames.txt" >> runner.sh
 grep -r -E "FIFA 20 \[Date|FIFA 20 Standard |FIFA 20 Ultimate Edition |FIFA 20 Champions" parse | sed -E "s/(.*.txt):.*/\1/" | sort -Ru  >> fifa20temp.txt
